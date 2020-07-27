@@ -1,1 +1,43 @@
-<router-outlet></router-outlet>
+<mat-toolbar class="navMenu">
+    <button mat-icon-button class="example-icon" (click)="side()" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+  </button>
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+  </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12 body">
+            <mat-sidenav-container class="sidenav-container">
+                <mat-sidenav class="sideLeft col-xl-2 col-lg-4 col-sm-6 col-12" #sidenav mode="side" [opened]="open">
+
+                    <mat-list>
+                        <mat-list-item><a href="user">Usuário</a></mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item><a href="launch">Lançamentos</a></mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item><a href="category">Categoria</a></mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item><a href="expenseType">Tipo de Despesa</a></mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item><a href="launchType">Tipo de Lançamento</a></mat-list-item>
+                    </mat-list>
+
+                </mat-sidenav>
+                <mat-sidenav-content class="sideRight">
+
+                    <router-outlet></router-outlet>
+
+                </mat-sidenav-content>
+            </mat-sidenav-container>
+        </div>
+    </div>
+</div>

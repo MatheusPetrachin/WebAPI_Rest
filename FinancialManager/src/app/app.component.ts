@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Financial Manager';
+  open: boolean = false;
+
+  side() {
+    if (this.open == false) {
+      this.open = true;
+    }
+    else{
+      this.open = false;
+    }
+  }
 }
