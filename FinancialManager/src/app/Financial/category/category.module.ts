@@ -1,20 +1,26 @@
 import { NgModule } from "@angular/core";
-import { CategoryComponent } from './category.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
+import { CategoryDetailComponent } from './category-detail/category.component';
+import { CategoryMasterComponent } from './category-master/category.component';
 
 @NgModule({
     declarations: [
-        CategoryComponent],
+        CategoryDetailComponent,
+        CategoryMasterComponent
+    ],
     imports: [  
         MatIconModule,
         MatButtonModule,
         MatToolbarModule,
         MatCardModule        
     ],
-    exports: [CategoryComponent]
+    exports: [
+        CategoryDetailComponent,
+        CategoryMasterComponent
+    ]
 })
 export class CategoryModule { }

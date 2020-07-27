@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './launch-type.component.html',
   styleUrls: ['./launch-type.component.css']
 })
-export class LaunchTypeComponent implements OnInit {
+export class LaunchTypeMasterComponent implements OnInit {
 
   constructor() { }
 

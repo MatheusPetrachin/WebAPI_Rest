@@ -1,20 +1,25 @@
 import { NgModule } from "@angular/core";
-import { LaunchComponent } from './launch.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
+import { LaunchMasterComponent } from './launch-master/launch.component';
+import { LaunchDetailComponent } from './launch-detail/launch.component';
 
 @NgModule({
     declarations: [
-        LaunchComponent],
+        LaunchMasterComponent,
+        LaunchDetailComponent
+    ],
     imports: [  
         MatIconModule,
         MatButtonModule,
         MatToolbarModule,
         MatCardModule        
     ],
-    exports: [LaunchComponent]
+    exports: [
+        LaunchMasterComponent,
+        LaunchDetailComponent]
 })
 export class LaunchModule { }
