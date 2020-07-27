@@ -7,11 +7,28 @@
 
 
   <ItemGroup>
+    <PackageReference Include="DevExpress.Xpo" Version="18.1.6" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.6" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Models\Category.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Models\ExpenseType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Models\Launch.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Models\LaunchType.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
