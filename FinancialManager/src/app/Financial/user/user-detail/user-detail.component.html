@@ -1,0 +1,49 @@
+<mat-card class="card col-3 cardUser">
+    <form #formDir="ngForm" [formGroup]="userForm">
+
+        <mat-form-field class="col-12">
+            <mat-label>Name</mat-label>
+            <input matInput #name placeholder="Ex. Matheus" formControlName="name" required>
+        </mat-form-field>
+
+        <mat-form-field class="col-12">
+            <mat-label>Last Name</mat-label>
+            <input matInput #lastName placeholder="Ex. Petrachin" formControlName="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field class="col-12">
+            <mat-label>Email</mat-label>
+            <input matInput #email placeholder="Ex. mpetrachin@gmail.com" formControlName="email" required>
+            <mat-error *ngIf="userForm.hasError('email') && !userForm.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="userForm.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-12">
+            <mat-label>Choose a date</mat-label>
+            <input matInput #birthdate [matDatepicker]="picker" formControlName="birthDate" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="col-12">
+            <mat-label>Telephone</mat-label>
+            <input type="tel" matInput #phone placeholder="(19)98752-3466" formControlName="phone" required>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+
+    </form>
+
+    <button mat-button color="primary" (click)="save()">Save</button>
+    <button mat-button color="secondary">Cancel</button>
+</mat-card>
+
+<!-- 
+    name: string;
+lastName: string;
+email:string;
+birthdate: Date;
+telephone: string;   -->

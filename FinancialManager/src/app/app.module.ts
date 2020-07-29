@@ -6,12 +6,14 @@ import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
 
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule, MatButton } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatListModule} from '@angular/material/list';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { UserModule } from './Financial/user/user.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     BrowserAnimationsModule,
     NgbModule,
-    MatSidenavModule,    
+    MatSidenavModule,
+    MatCardModule,    
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatDividerModule,
     MatListModule, 
+    UserModule,
     routing
   ],
   providers: [],

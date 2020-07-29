@@ -9,8 +9,8 @@ import { LaunchMasterComponent } from './Financial/launch/launch-master/launch.c
 import { LaunchDetailComponent } from './Financial/launch/launch-detail/launch.component';
 import { LaunchTypeMasterComponent } from './Financial/launch-type/launch-type-master/launch-type.component';
 import { LaunchTypeDetailComponent } from './Financial/launch-type/launch-type-detail/launch-type.component';
-import { UserMasterComponent } from './Financial/user/user-master/user.component';
-import { UserDetailComponent } from './Financial/user/user-detail/user.component';
+import { UserMasterComponent } from './Financial/user/user-master/user-master.component';
+import { UserDetailComponent } from './Financial/user/user-detail/user-detail.component';
 
 
 const APP_ROUTES: Routes = [
