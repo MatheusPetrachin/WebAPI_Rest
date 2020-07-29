@@ -22,13 +22,7 @@ namespace WebAPI_Rest.Models
         [EmailAddress(ErrorMessage = "Enter an valid e-mail")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
-        [Required(ErrorMessage = "{0} required")]
-        [Display(Name = "Birth Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0: dd/mm/yyyy}")]
-        public DateTime BirthDate { get; set; }
-
+        
         public string Telephone { get; set; }
 
         public User()
@@ -41,7 +35,6 @@ namespace WebAPI_Rest.Models
             Name = name;
             LastName = lastName;
             Email = email;
-            BirthDate = birthDate;
             Telephone = telephone;
         }
     }

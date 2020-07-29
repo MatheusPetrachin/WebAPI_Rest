@@ -3,6 +3,5 @@ export class User {
     name: string;
     lastName: string;
     email:string;
-    birthDate: Date;
     phone: string;    
 }

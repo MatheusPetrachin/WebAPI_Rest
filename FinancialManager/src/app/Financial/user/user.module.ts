@@ -14,6 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         MatFormFieldModule,
         MatInputModule,
         MatListModule,
