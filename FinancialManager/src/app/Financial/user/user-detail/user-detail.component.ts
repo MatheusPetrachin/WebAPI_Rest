@@ -5,7 +5,8 @@ import { UserService } from '../user.service';
 
 @Component({
   templateUrl: "./user-detail.component.html",
-  styleUrls: ["./user-detail.component.css"]
+  styleUrls: ["./user-detail.component.css"],
+  preserveWhitespaces: true
 })
 export class UserDetailComponent implements OnInit {
 
@@ -24,18 +25,27 @@ export class UserDetailComponent implements OnInit {
 
   loadForm(user: User) {
     this.userForm = this.formBuilder.group({
-      enabled: [true],
       name: [user.name, [Validators.required, Validators.maxLength(50)]],
       lastName: [user.lastName, [Validators.required, Validators.maxLength(50)]],
       email: [user.email],
-      phone: [user.phone, [Validators.maxLength(15)]],
+      telephone: [user.telephone, [Validators.maxLength(15)]],
     });
+  }
+
+  getUsers(){
+    this.userService.getUsers().subscribe(
+      success => console.log("success"),
+      error => console.error(error)
+    )
   }
 
   save() {
     const user: User = this.userForm.getRawValue();
     console.log(user);
-    this.userService.addUser(user);
+    this.userService.add(user).subscribe(
+      success => console.log("success"),
+      error => console.error(error)
+    );
   }
 
 }

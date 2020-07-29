@@ -9,25 +9,28 @@ import { User } from './user';
 })
 export class UserService {
 
-  API: string = environment.ApiUrl;
+  private readonly API: string = `${environment.ApiUrl}Users/`;
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {     
+    console.log(this.API);
+   }
 
-  updateUser(id: number, user: User): Observable<User> {
-    return this.http
-      .put<User>(this.API + 'users', user);
+  getUsers(): Observable<User[]>{
+    return this.http.get<User[]>(this.API)
   }
 
-  addUser(user: User) {
-    this.http.post<User>(`${this.API}Users`, user);
-    console.log(`${this.API}Users`);
+  update(user: User): Observable<User> {
+    return this.http.put<User>(this.API, user);
+  }
+
+  add(user: User): Observable<User> {   
+    return this.http.post<User>(this.API, user);
   }
 
   delete(id: number): Observable<User> {
-    return this.http
-      .delete<User>(this.API + 'users/' + id);
+    return this.http.delete<User>(this.API + id);
   }
 
 }
