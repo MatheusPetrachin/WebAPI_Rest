@@ -3,6 +3,7 @@ import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: "./user-detail.component.html",
@@ -57,14 +58,31 @@ export class UserDetailComponent implements OnInit {
   }
 
   save() {
+
+    if (this.userForm.invalid){
+      return;
+    }
+
     const user: User = this.userForm.getRawValue();
-    console.log(user);
-    this.userService.add(user).subscribe(
-      success => {
-        this.router.navigate(['/user-master']);
-      },
-      error => console.error(error)
-    );
+    
+    var update: Observable<User>;
+
+    
+    if (this.isEdit) {      
+      user.id = this.id;
+      update = this.userService.update(user);
+    }
+    else{      
+      update = this.userService.add(user);
+    }
+
+    update.subscribe(s => {
+      this.router.navigate(['/user-master']);
+    },err =>{
+      console.error(err)
+    }
+    )
+   
   }
 
   cancel() {

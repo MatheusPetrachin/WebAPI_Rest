@@ -42,9 +42,10 @@ namespace WebAPI_Rest.Controllers
         }
 
         // PUT: api/Users/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        [HttpPut]
+        public async Task<IActionResult> PutUser(User user)
         {
+            var id = user.Id;
             if (id != user.Id)
             {
                 return BadRequest();
