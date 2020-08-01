@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,6 +27,7 @@ namespace WebAPI_Rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
 
             services.AddDbContext<Context>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), builder =>
  builder.MigrationsAssembly("WebAPI_Rest")));
@@ -37,8 +39,8 @@ namespace WebAPI_Rest
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,8 +57,13 @@ namespace WebAPI_Rest
                 app.UseHsts();
             }
 
+            app.UseCors(x => x.AllowAnyOrigin()
+                              .AllowAnyMethod()
+                              .AllowAnyHeader()
+                              .SetIsOriginAllowedToAllowWildcardSubdomains());
+
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles();           
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
