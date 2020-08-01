@@ -24,7 +24,7 @@ const APP_ROUTES: Routes = [
     { path:'launchType-master', component: LaunchTypeMasterComponent},
     { path:'launchType-detail', component: LaunchTypeDetailComponent},
     { path:'user-master', component: UserMasterComponent},
-    { path:'user-detail', component: UserDetailComponent},
+    { path:'user-detail/:action/:id', component: UserDetailComponent},
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

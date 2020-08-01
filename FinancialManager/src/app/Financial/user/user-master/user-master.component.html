@@ -4,7 +4,7 @@
         <div class="col-12">
             <div class="card grid">
 
-                <div class="card-header">
+                <div class="card-header header">
                     Users
                 </div>
 
@@ -16,11 +16,11 @@
 
                             <ng-container matColumnDef="id">
                                 <mat-header-cell *matHeaderCellDef>
-                                    <button (click)="add()">Add</button>
+                                    <button mat-stroked-button (click)="add()">Add</button>
                                 </mat-header-cell>
                                 <mat-cell *matCellDef="let element">
-                                    <button>Edit</button>
-                                    <button>Delete</button>
+                                    <button mat-stroked-button (click)="edit(element.id)">Edit</button>
+                                    <button mat-stroked-button color="warn" (click)="delete(element.id)">Delete</button>
                                 </mat-cell>
                             </ng-container>
 

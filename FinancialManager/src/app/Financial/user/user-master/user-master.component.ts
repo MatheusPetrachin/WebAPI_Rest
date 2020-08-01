@@ -24,16 +24,32 @@ export class UserMasterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(){
     this.userService.getUsers()
-      .subscribe(p => {
-        this.dataSource = new MatTableDataSource(p);
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      });
+    .subscribe(p => {
+      this.dataSource = new MatTableDataSource(p);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
   add() {
-    this.router.navigate(["/user-detail"])
+    this.router.navigate(["/user-detail/add/0"])
+  }
+
+  edit(id: number) {
+    this.router.navigate(['/user-detail/edit/' + id]);
+  }
+
+  delete(id: number){
+    this.userService
+    .delete(id)
+    .subscribe(s => {
+      this.loadData();
+    });
   }
 
 }

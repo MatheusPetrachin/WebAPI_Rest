@@ -17,6 +17,10 @@ export class UserService {
     console.log(this.API);
    }
 
+   getUser(id: number): Observable<User>{
+    return this.http.get<User>(this.API + id)
+  }
+
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.API)
   }
