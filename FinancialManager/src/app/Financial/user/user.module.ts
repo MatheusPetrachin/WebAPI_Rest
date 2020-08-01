@@ -14,6 +14,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,9 @@ import { MatIconModule } from '@angular/material/icon';
         MatDatepickerModule,
         MatButtonModule,
         MatNativeDateModule,
-        MatIconModule
+        MatIconModule,
+        MatPaginatorModule,
+        MatTableModule
     ],
     exports: [
         UserMasterComponent,
