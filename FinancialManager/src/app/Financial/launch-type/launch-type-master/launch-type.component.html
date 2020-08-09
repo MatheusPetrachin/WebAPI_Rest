@@ -1,1 +1,43 @@
-<p>launch-type works!</p>
+<div class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card grid">
+
+                <div class="card-header header">
+                    Expense Type
+                </div>
+
+                <div class="card-body">
+
+                    <div class="table">
+
+                        <mat-table [dataSource]="dataSource" matSort>
+
+                            <ng-container matColumnDef="id">
+                                <mat-header-cell *matHeaderCellDef>
+                                    <button mat-stroked-button (click)="add()">Add</button>
+                                </mat-header-cell>
+                                <mat-cell *matCellDef="let element">
+                                    <button mat-stroked-button (click)="edit(element.id)">Edit</button>
+                                    <button mat-stroked-button color="warn" (click)="delete(element.id)">Delete</button>
+                                </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="description">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+                        </mat-table>
+
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

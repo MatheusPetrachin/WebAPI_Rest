@@ -20,9 +20,9 @@ const APP_ROUTES: Routes = [
     { path:'category-master', component: CategoryMasterComponent},
     { path:'category-detail', component: CategoryDetailComponent},
     { path:'expenseType-master', component: ExpenseTypeMasterComponent},
-    { path:'expenseType-detail', component: ExpenseTypeDetailComponent},
+    { path:'expenseType-detail/:action/:id', component: ExpenseTypeDetailComponent},
     { path:'launchType-master', component: LaunchTypeMasterComponent},
-    { path:'launchType-detail', component: LaunchTypeDetailComponent},
+    { path:'launchType-detail/:action/:id', component: LaunchTypeDetailComponent},
     { path:'user-master', component: UserMasterComponent},
     { path:'user-detail/:action/:id', component: UserDetailComponent},
 ];
