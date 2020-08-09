@@ -1,8 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'
 
-import { CategoryMasterComponent } from './Financial/category/category-master/category.component';
-import { CategoryDetailComponent } from './Financial/category/category-detail/category.component';
 import { ExpenseTypeMasterComponent } from './Financial/expense-type/expense-type-master/expense-type.component';
 import { ExpenseTypeDetailComponent } from './Financial/expense-type/expense-type-detail/expense-type.component';
 import { LaunchMasterComponent } from './Financial/launch/launch-master/launch.component';
@@ -17,8 +15,6 @@ const APP_ROUTES: Routes = [
     { path:'', component: LaunchMasterComponent},
     { path:'launch-master', component: LaunchMasterComponent},
     { path:'launch-detail', component: LaunchDetailComponent},
-    { path:'category-master', component: CategoryMasterComponent},
-    { path:'category-detail', component: CategoryDetailComponent},
     { path:'expenseType-master', component: ExpenseTypeMasterComponent},
     { path:'expenseType-detail/:action/:id', component: ExpenseTypeDetailComponent},
     { path:'launchType-master', component: LaunchTypeMasterComponent},

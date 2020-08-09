@@ -38,11 +38,11 @@ export class ExpenseTypeMasterComponent implements OnInit {
   }
 
   add() {
-    this.router.navigate(["/expenseType-master/add/0"])
+    this.router.navigate(["/expenseType-detail/add/0"])
   }
 
   edit(id: number) {
-    this.router.navigate(['/expenseType-master/edit/' + id]);
+    this.router.navigate(['/expenseType-detail/edit/' + id]);
   }
 
   delete(id: number){
