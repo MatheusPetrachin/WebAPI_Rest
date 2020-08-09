@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ExpenseTypeService } from '../expense-type.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ExpenseType } from '../expense-type';
-import { LaunchType } from '../../launch-type/launch-type';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -58,17 +57,17 @@ export class ExpenseTypeDetailComponent implements OnInit {
       return;
     }
 
-    const launchType: LaunchType = this.formGroup.getRawValue();
+    const expenseType: ExpenseType = this.formGroup.getRawValue();
     
-    var update: Observable<LaunchType>;
+    var update: Observable<ExpenseType>;
 
     
     if (this.isEdit) {      
-      launchType.id = this.id;
-      update = this.expenseTypeService.update(launchType);
+      expenseType.id = this.id;
+      update = this.expenseTypeService.update(expenseType);
     }
     else{      
-      update = this.expenseTypeService.add(launchType);
+      update = this.expenseTypeService.add(expenseType);
     }
 
     update.subscribe(s => {

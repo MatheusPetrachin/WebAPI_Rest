@@ -15,7 +15,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { UserModule } from './Financial/user/user.module';
 import { HttpClientModule } from '@angular/common/http';
-import { LaunchTypeModule } from './Financial/launch-type/launch-type.module';
 import { ExpenseTypeModule } from './Financial/expense-type/expense-type.module';
 
 @NgModule({
@@ -35,7 +34,6 @@ import { ExpenseTypeModule } from './Financial/expense-type/expense-type.module'
     MatDividerModule,
     MatListModule, 
     UserModule,
-    LaunchTypeModule,
     ExpenseTypeModule,
     routing
   ],
