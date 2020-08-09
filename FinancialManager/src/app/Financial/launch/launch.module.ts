@@ -6,6 +6,15 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import { LaunchMasterComponent } from './launch-master/launch.component';
 import { LaunchDetailComponent } from './launch-detail/launch.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
     declarations: [
@@ -13,10 +22,19 @@ import { LaunchDetailComponent } from './launch-detail/launch.component';
         LaunchDetailComponent
     ],
     imports: [  
-        MatIconModule,
+        CommonModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatListModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        MatDatepickerModule,
         MatButtonModule,
-        MatToolbarModule,
-        MatCardModule        
+        MatNativeDateModule,
+        MatIconModule,
+        MatPaginatorModule,
+        MatTableModule       
     ],
     exports: [
         LaunchMasterComponent,

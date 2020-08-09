@@ -18,16 +18,10 @@
 
 
   <ItemGroup>
-    <Compile Update="Models\Category.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Models\ExpenseType.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Models\Launch.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Models\LaunchType.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
