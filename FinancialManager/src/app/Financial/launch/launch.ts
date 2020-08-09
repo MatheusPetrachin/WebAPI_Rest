@@ -1,7 +1,8 @@
 export class Launch {
     id: number;
-    description: string;      
+    description: string;  
+    launchType: string;    
     expenseTypeId: number; 
-    value: number;
+    value: string;
     launchDate: Date;
 }

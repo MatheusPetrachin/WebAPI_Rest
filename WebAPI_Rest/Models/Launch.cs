@@ -7,7 +7,8 @@ namespace WebAPI_Rest.Models
         public int Id { get; set; }
         public string Description { get; set; }
         public int ExpenseTypeId { get; set; }
-        public decimal Value { get; set; }
+        public string LaunchType { get; set; }
+        public string Value { get; set; }
         public DateTime LaunchDate { get; set; }
     }
 }

@@ -42,9 +42,11 @@ namespace WebAPI_Rest.Controllers
         }
 
         // PUT: api/Launches/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLaunch(int id, Launch launch)
+        [HttpPut]
+        public async Task<IActionResult> PutLaunch(Launch launch)
         {
+
+            var id = launch.Id;
             if (id != launch.Id)
             {
                 return BadRequest();

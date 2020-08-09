@@ -15,6 +15,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     declarations: [
@@ -34,7 +36,9 @@ import { MatTableModule } from '@angular/material/table';
         MatNativeDateModule,
         MatIconModule,
         MatPaginatorModule,
-        MatTableModule       
+        MatTableModule,
+        MatCheckboxModule,
+        MatSelectModule
     ],
     exports: [
         LaunchMasterComponent,

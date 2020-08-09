@@ -12,7 +12,7 @@ import { UserDetailComponent } from './Financial/user/user-detail/user-detail.co
 const APP_ROUTES: Routes = [
     { path:'', component: LaunchMasterComponent},
     { path:'launch-master', component: LaunchMasterComponent},
-    { path:'launch-detail', component: LaunchDetailComponent},
+    { path:'launch-detail/:action/:id', component: LaunchDetailComponent},
     { path:'expenseType-master', component: ExpenseTypeMasterComponent},
     { path:'expenseType-detail/:action/:id', component: ExpenseTypeDetailComponent},
     { path:'user-master', component: UserMasterComponent},

@@ -7,7 +7,7 @@ import { Launch } from './launch';
 @Injectable({
     providedIn: 'root'
   })
-  export class ExpenseTypeService {
+  export class LaunchService {
   
     private readonly API: string = `${environment.ApiUrl}Launches/`;
   

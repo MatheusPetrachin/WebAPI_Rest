@@ -29,6 +29,26 @@
                                 <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
                             </ng-container>
 
+                            <ng-container matColumnDef="launchType">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Lançamento </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.launchType}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="expenseType">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Despesa </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.expenseType}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="value">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Valor </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.value}} </mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="launchDate">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> Data </mat-header-cell>
+                                <mat-cell *matCellDef="let element"> {{element.launchDate}} </mat-cell>
+                            </ng-container>
+
                             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
