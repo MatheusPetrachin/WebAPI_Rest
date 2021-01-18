@@ -24,6 +24,10 @@ import { Launch } from './launch';
     gets(): Observable<Launch[]>{
       return this.http.get<Launch[]>(this.API)
     }
+
+    getTotales(): Observable<number>{
+      return this.http.get<number>(this.API + `Totales`)
+    }
   
     update(launch: Launch): Observable<Launch> {
       return this.http.put<Launch>(this.API, launch);

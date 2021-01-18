@@ -28,6 +28,21 @@ namespace WebAPI_Rest.Controllers
         }
 
         // GET: api/Launches/5
+        [HttpGet("Totales")]
+        public async Task<ActionResult<double>> GetTotales()
+        {
+            List<double>  Despesa = await _context.Launches.Where(s => s.LaunchType == "Despesa").Select(s => s.Value).ToListAsync();
+            double AmountDespesa = Despesa.Sum();
+
+            List<double> Renda = await _context.Launches.Where(s => s.LaunchType == "Renda").Select(s => s.Value).ToListAsync();
+            double AmountRenda = Renda.Sum();
+
+            double Restante = AmountRenda - AmountDespesa;
+
+            return Restante;
+        }
+
+        // GET: api/Launches/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Launch>> GetLaunch(int id)
         {

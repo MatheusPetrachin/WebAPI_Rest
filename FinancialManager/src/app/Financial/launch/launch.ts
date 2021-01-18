@@ -5,4 +5,6 @@ export class Launch {
     expenseTypeId: number; 
     value: string;
     launchDate: Date;
+    totale: number;
+    month: string
 }

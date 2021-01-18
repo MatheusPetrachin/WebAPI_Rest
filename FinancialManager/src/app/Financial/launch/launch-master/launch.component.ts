@@ -13,7 +13,11 @@ import { Router } from '@angular/router';
 })
 export class LaunchMasterComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'description', 'launchType','expenseType', 'value', 'launchDate'];
+  model = {
+    totale: 500.4,
+  }
+
+  displayedColumns: string[] = ['id', 'description', 'launchType','value', 'launchDate'];
   dataSource: MatTableDataSource<Launch>;
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -26,6 +30,7 @@ export class LaunchMasterComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
+    this.launchService.getTotales().subscribe(s => this.model.totale = s);
   }
 
   loadData(){
